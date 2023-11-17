@@ -40,6 +40,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'fecha_nacimento' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+    * Obtenemos el domicilio del usuario
+    */
+    public function userDomicilio() 
+    {
+        return $this->hasOne(UserDomicilio::class);
+    }
 }
